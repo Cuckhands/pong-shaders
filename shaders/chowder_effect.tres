@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bi8yvoq12hdww"]
+
+[ext_resource type="Shader" uid="uid://cn5gv5dsmqnvt" path="res://shaders/chowder_effect.gdshader" id="1_whfml"]
+
+[resource]
+shader = ExtResource("1_whfml")
