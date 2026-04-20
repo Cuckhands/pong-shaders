@@ -1,5 +1,7 @@
 [gd_resource type="VisualShader" format=3 uid="uid://b0dj4ef65q8qr"]
 
+[ext_resource type="Texture2D" uid="uid://co5h537ul2jc2" path="res://sprites/Norman_Bulb.PNG" id="1_mwrhb"]
+
 [sub_resource type="VisualShaderNodeVectorDistance" id="VisualShaderNodeVectorDistance_5jg20"]
 output_port_for_preview = 0
 default_input_values = [0, Vector2(0.2, 0.2), 1, Vector2(0.2, 0.2)]
@@ -8,6 +10,9 @@ op_type = 0
 [sub_resource type="VisualShaderNodeStep" id="VisualShaderNodeStep_5jg20"]
 output_port_for_preview = 0
 default_input_values = [0, 0.0, 1, 0.45]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_oo8uc"]
+texture = ExtResource("1_mwrhb")
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_oo8uc"]
 expanded_output_ports = [0]
@@ -24,9 +29,11 @@ nodes/fragment/0/position = Vector2(660, 160)
 nodes/fragment/7/node = SubResource("VisualShaderNodeInput_oo8uc")
 nodes/fragment/7/position = Vector2(-280, 140)
 nodes/fragment/9/node = SubResource("VisualShaderNodeVec2Constant_ngjfb")
-nodes/fragment/9/position = Vector2(-220, 340)
+nodes/fragment/9/position = Vector2(-300, 300)
 nodes/fragment/10/node = SubResource("VisualShaderNodeVectorDistance_5jg20")
 nodes/fragment/10/position = Vector2(160, 140)
 nodes/fragment/12/node = SubResource("VisualShaderNodeStep_5jg20")
 nodes/fragment/12/position = Vector2(400, 160)
-nodes/fragment/connections = PackedInt32Array(7, 0, 10, 0, 9, 0, 10, 1, 10, 0, 12, 0, 12, 0, 0, 1)
+nodes/fragment/14/node = SubResource("VisualShaderNodeTexture_oo8uc")
+nodes/fragment/14/position = Vector2(-80, 420)
+nodes/fragment/connections = PackedInt32Array(10, 0, 12, 0, 12, 0, 0, 1, 9, 0, 10, 1, 7, 0, 10, 0)
