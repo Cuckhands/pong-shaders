@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cbma8msrx4dgu"]
+
+[ext_resource type="Shader" uid="uid://b0dj4ef65q8qr" path="res://shaders/fragment_basics.tres" id="1_2nrcr"]
+[ext_resource type="Texture2D" uid="uid://s8014gxv15q7" path="res://sprites/icon.svg" id="2_htqmq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1urw2"]
+shader = ExtResource("1_2nrcr")
+
+[node name="FragmentBasics" type="Node2D" unique_id=48507044]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1878235800]
+material = SubResource("ShaderMaterial_1urw2")
+texture = ExtResource("2_htqmq")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1046727136]
+zoom = Vector2(5, 5)

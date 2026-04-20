@@ -1,20 +1,17 @@
 [gd_scene format=3 uid="uid://dxorngg82ichi"]
 
 [ext_resource type="Texture2D" uid="uid://s8014gxv15q7" path="res://sprites/icon.svg" id="1_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://5y0yvr54e7dr" path="res://scenes/ball.tscn" id="2_fj7yv"]
 
 [node name="World" type="Node2D" unique_id=409821043]
 
-[node name="PinkBG" type="Sprite2D" parent="." unique_id=1934115814]
+[node name="PinkBG_bottom" type="Sprite2D" parent="." unique_id=1934115814]
 modulate = Color(1, 0, 1, 1)
 position = Vector2(571.5, 327.50003)
 scale = Vector2(10.367187, 5.8828125)
 texture = ExtResource("1_fj7yv")
 
-[node name="GreenBG" type="Sprite2D" parent="." unique_id=887070536]
+[node name="GreenBG_top" type="Sprite2D" parent="." unique_id=887070536]
 modulate = Color(1.2995303e-06, 0.7413422, 0.432632, 1)
 position = Vector2(571.5, 327.50003)
 scale = Vector2(10.367187, 5.8828125)
 texture = ExtResource("1_fj7yv")
-
-[node name="Ball" parent="." unique_id=1112104895 instance=ExtResource("2_fj7yv")]
