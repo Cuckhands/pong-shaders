@@ -13,4 +13,5 @@ material = SubResource("ShaderMaterial_1urw2")
 texture = ExtResource("2_htqmq")
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1046727136]
+visible = false
 zoom = Vector2(5, 5)
