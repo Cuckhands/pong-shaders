@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://dxorngg82ichi"]
 
 [ext_resource type="Texture2D" uid="uid://s8014gxv15q7" path="res://sprites/icon.svg" id="1_fj7yv"]
+[ext_resource type="Shader" uid="uid://bs5p5f02ke0hv" path="res://shaders/unmoving_plaid.gdshader" id="2_4wyf3"]
+[ext_resource type="Script" uid="uid://d2a0u0go22r3w" path="res://scripts/cursor_follow.gd" id="3_k0juu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71j4m"]
+shader = ExtResource("2_4wyf3")
+shader_parameter/scale = Vector2(8, 8)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/regionEnabled = false
+shader_parameter/regionPosition = Vector2(0, 0)
+shader_parameter/regionSize = Vector2(16, 16)
 
 [node name="World" type="Node2D" unique_id=409821043]
 
@@ -15,3 +25,8 @@ modulate = Color(1.2995303e-06, 0.7413422, 0.432632, 1)
 position = Vector2(571.5, 327.50003)
 scale = Vector2(10.367187, 5.8828125)
 texture = ExtResource("1_fj7yv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=929061510]
+material = SubResource("ShaderMaterial_71j4m")
+texture = ExtResource("1_fj7yv")
+script = ExtResource("3_k0juu")
