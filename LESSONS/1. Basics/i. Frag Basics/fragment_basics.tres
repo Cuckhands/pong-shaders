@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" format=3 uid="uid://b0dj4ef65q8qr"]
 
-[ext_resource type="Texture2D" uid="uid://co5h537ul2jc2" path="res://sprites/Norman_Bulb.PNG" id="1_mwrhb"]
+[ext_resource type="Texture2D" uid="uid://co5h537ul2jc2" path="res://sprites/Norman_Bulb.PNG" id="1_6w55y"]
 
 [sub_resource type="VisualShaderNodeVectorDistance" id="VisualShaderNodeVectorDistance_5jg20"]
 output_port_for_preview = 0
@@ -12,7 +12,7 @@ output_port_for_preview = 0
 default_input_values = [0, 0.0, 1, 0.45]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_oo8uc"]
-texture = ExtResource("1_mwrhb")
+texture = ExtResource("1_6w55y")
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_oo8uc"]
 expanded_output_ports = [0]

@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://5g1n6ycp5bdj"]
 
-[ext_resource type="Shader" uid="uid://ccv3liw67nwss" path="res://LESSONS/1. Basics/ii. Frag Color/fragment_color.tres" id="1_rugtg"]
+[ext_resource type="Shader" uid="uid://byk21seq8xcps" path="res://LESSONS/1. Basics/iii. Textures/textures.tres" id="1_wjkex"]
 [ext_resource type="Texture2D" uid="uid://s8014gxv15q7" path="res://sprites/icon.svg" id="2_mwpnm"]
+[ext_resource type="Texture2D" uid="uid://6ibgooxjaee0" path="res://LESSONS/1. Basics/iii. Textures/1924705-1531508643.jpg" id="3_yq2fh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1urw2"]
-shader = ExtResource("1_rugtg")
+shader = ExtResource("1_wjkex")
 
 [node name="FragmentBasics" type="Node2D" unique_id=48507044]
 
@@ -15,3 +16,8 @@ texture = ExtResource("2_mwpnm")
 [node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1046727136]
 visible = false
 zoom = Vector2(5, 5)
+
+[node name="19247051531508643" type="Sprite2D" parent="." unique_id=1770261267]
+position = Vector2(-4.7683716e-07, -130.99998)
+scale = Vector2(0.17656249, 0.17656247)
+texture = ExtResource("3_yq2fh")
