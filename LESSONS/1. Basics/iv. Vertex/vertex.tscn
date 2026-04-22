@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bh61swgc61onp"]
+
+[ext_resource type="Shader" uid="uid://lxa7u42tylm5" path="res://LESSONS/1. Basics/iv. Vertex/vertex.tres" id="1_aston"]
+[ext_resource type="Texture2D" uid="uid://s8014gxv15q7" path="res://sprites/icon.svg" id="2_2cod5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1urw2"]
+shader = ExtResource("1_aston")
+
+[node name="FragmentBasics" type="Node2D" unique_id=48507044]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1878235800]
+material = SubResource("ShaderMaterial_1urw2")
+texture = ExtResource("2_2cod5")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1046727136]
+visible = false
+zoom = Vector2(5, 5)
