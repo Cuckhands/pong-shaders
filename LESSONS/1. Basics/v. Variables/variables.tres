@@ -8,6 +8,10 @@ max = 0.5
 default_value_enabled = true
 default_value = 0.5
 
+[sub_resource type="VisualShaderNodeVaryingGetter" id="VisualShaderNodeVaryingGetter_avflk"]
+varying_name = "vertex"
+varying_type = 3
+
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_t7824"]
 input_name = "uv"
 
@@ -29,16 +33,23 @@ op_type = 0
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_cmose"]
 input_name = "vertex"
 
+[sub_resource type="VisualShaderNodeVaryingSetter" id="VisualShaderNodeVaryingSetter_rosg6"]
+varying_name = "vertex"
+varying_type = 3
+
 [resource]
 mode = 1
 flags/light_only = false
+varyings/vertex = "0,3"
 nodes/vertex/2/node = SubResource("VisualShaderNodeVec2Parameter_avflk")
 nodes/vertex/2/position = Vector2(-240, 200)
 nodes/vertex/3/node = SubResource("VisualShaderNodeVectorOp_rosg6")
 nodes/vertex/3/position = Vector2(140, 180)
 nodes/vertex/4/node = SubResource("VisualShaderNodeInput_cmose")
 nodes/vertex/4/position = Vector2(-220, 100)
-nodes/vertex/connections = PackedInt32Array(3, 0, 0, 0, 2, 0, 3, 1, 4, 0, 3, 0)
+nodes/vertex/6/node = SubResource("VisualShaderNodeVaryingSetter_rosg6")
+nodes/vertex/6/position = Vector2(140, 60)
+nodes/vertex/connections = PackedInt32Array(3, 0, 0, 0, 2, 0, 3, 1, 4, 0, 3, 0, 4, 0, 6, 0)
 nodes/fragment/5/node = SubResource("VisualShaderNodeInput_t7824")
 nodes/fragment/5/position = Vector2(-440, 200)
 nodes/fragment/6/node = SubResource("VisualShaderNodeVectorDistance_cmose")
@@ -47,4 +58,6 @@ nodes/fragment/9/node = SubResource("VisualShaderNodeStep_58s8u")
 nodes/fragment/9/position = Vector2(180, 160)
 nodes/fragment/13/node = SubResource("VisualShaderNodeFloatParameter_avflk")
 nodes/fragment/13/position = Vector2(-280, 300)
-nodes/fragment/connections = PackedInt32Array(5, 0, 6, 0, 9, 0, 0, 1, 6, 0, 9, 0, 13, 0, 9, 1)
+nodes/fragment/14/node = SubResource("VisualShaderNodeVaryingGetter_avflk")
+nodes/fragment/14/position = Vector2(180, 40)
+nodes/fragment/connections = PackedInt32Array(5, 0, 6, 0, 9, 0, 0, 1, 6, 0, 9, 0, 13, 0, 9, 1, 14, 0, 0, 0)
