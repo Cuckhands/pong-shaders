@@ -6,8 +6,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1urw2"]
 shader = ExtResource("2_nccng")
-shader_parameter/exposed_variable = 0.0
-shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/circle_size = 0.5
+shader_parameter/color = Color(0.5921569, 0.2784314, 0.56078434, 1)
 
 [node name="FragmentBasics" type="Node2D" unique_id=48507044]
 script = ExtResource("1_klt03")

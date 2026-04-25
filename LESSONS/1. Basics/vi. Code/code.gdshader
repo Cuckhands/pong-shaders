@@ -1,17 +1,11 @@
 shader_type canvas_item;
 
-uniform float exposed_variable: hint_range(0, 1.0);
+uniform float circle_size: hint_range(0.0, 0.5) = 0.5;
 uniform vec3 color: source_color;
 
-void vertex() {
-	// Called for every vertex the material is visible on.
-	VERTEX += vec2(20, 10);
-}
-
 void fragment() {
-	// Called for every pixel the material is visible on.
-	float test_alpha = 0.5 + exposed_variable;
-	COLOR.rgb = color;
+	float circle = distance(UV, vec2(0.5));
+	COLOR = vec4(color, step(circle, circle_size));
 }
 
 //void light() {
