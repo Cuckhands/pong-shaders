@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://dq635eyjsamu5" path="res://LESSONS/1. Basics/vi. Code/code.gdshader" id="2_dnr63"]
 [ext_resource type="Shader" uid="uid://eqyb6tox1wc8" path="res://LESSONS/1. Basics/vi. Code/code_exercise.gdshader" id="2_nccng"]
 [ext_resource type="Texture2D" uid="uid://s8014gxv15q7" path="res://sprites/icon.svg" id="3_o4o6r"]
+[ext_resource type="Texture2D" uid="uid://co5h537ul2jc2" path="res://sprites/Norman_Bulb.PNG" id="5_y4vvx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1urw2"]
 shader = ExtResource("2_dnr63")
@@ -12,7 +13,8 @@ shader_parameter/color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y4vvx"]
 shader = ExtResource("2_nccng")
-shader_parameter/exposed = 0.2500000037253
+shader_parameter/amount_hidden = 0.40000000596048
+shader_parameter/test_texture = ExtResource("5_y4vvx")
 
 [node name="FragmentBasics" type="Node2D" unique_id=48507044]
 script = ExtResource("1_klt03")
