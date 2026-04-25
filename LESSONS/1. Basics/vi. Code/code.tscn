@@ -1,21 +1,29 @@
 [gd_scene format=3 uid="uid://cpm0g2jf5ce81"]
 
 [ext_resource type="Script" uid="uid://qe05cgdu376d" path="res://LESSONS/1. Basics/v. Variables/variables.gd" id="1_klt03"]
-[ext_resource type="Shader" uid="uid://dq635eyjsamu5" path="res://LESSONS/1. Basics/vi. Code/code.gdshader" id="2_nccng"]
+[ext_resource type="Shader" uid="uid://dq635eyjsamu5" path="res://LESSONS/1. Basics/vi. Code/code.gdshader" id="2_dnr63"]
+[ext_resource type="Shader" uid="uid://eqyb6tox1wc8" path="res://LESSONS/1. Basics/vi. Code/code_exercise.gdshader" id="2_nccng"]
 [ext_resource type="Texture2D" uid="uid://s8014gxv15q7" path="res://sprites/icon.svg" id="3_o4o6r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1urw2"]
-shader = ExtResource("2_nccng")
+shader = ExtResource("2_dnr63")
 shader_parameter/circle_size = 0.5
-shader_parameter/color = Color(0.5921569, 0.2784314, 0.56078434, 1)
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4vvx"]
+shader = ExtResource("2_nccng")
+shader_parameter/exposed = 0.2500000037253
 
 [node name="FragmentBasics" type="Node2D" unique_id=48507044]
 script = ExtResource("1_klt03")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1878235800]
+[node name="Icon" type="Sprite2D" parent="." unique_id=1878235800]
 material = SubResource("ShaderMaterial_1urw2")
 texture = ExtResource("3_o4o6r")
 
-[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1046727136]
-visible = false
+[node name="Icon2" type="Sprite2D" parent="." unique_id=1643135259]
+material = SubResource("ShaderMaterial_y4vvx")
+texture = ExtResource("3_o4o6r")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2037926441]
 zoom = Vector2(5, 5)
