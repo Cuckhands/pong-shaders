@@ -1,22 +1,18 @@
 shader_type canvas_item;
 
-instance uniform vec2 position = vec2(0); // Global position of the sprite
-uniform vec2 scale = vec2(1); // Scale of the sprite
-uniform vec2 offset = vec2(0); // Offset in pixels
-
-uniform bool regionEnabled = false; // Enable Sprite Region
-uniform vec2 regionPosition = vec2(0); // Region Sprite Position
-uniform vec2 regionSize = vec2(16); // Region Sprite Size
+uniform sampler2D background_texture;
+uniform vec2 texture_size = vec2(256.0);
+uniform float tile_scale = 1.0;
 
 void fragment() {
-	vec2 uv = UV + (position + offset) * TEXTURE_PIXEL_SIZE / scale;
-	if (regionEnabled) {
-		uv -= regionPosition * TEXTURE_PIXEL_SIZE;
-		uv = mod(uv * scale, regionSize * TEXTURE_PIXEL_SIZE) + regionPosition * TEXTURE_PIXEL_SIZE;
-	}
-	else {
-		uv = mod(uv * scale, 1.0);
-	}
+	// Get absolute screen pixel coordinate
+	vec2 screen_pixel = SCREEN_UV * (1.0 / SCREEN_PIXEL_SIZE);
 	
-	COLOR = texture(TEXTURE, uv);
+	// Tile the background
+	vec2 bg_uv = screen_pixel / texture_size * tile_scale;
+	bg_uv = fract(bg_uv);
+	
+	vec4 bg_color = texture(background_texture, bg_uv);
+	float mask = texture(TEXTURE, UV).a;
+	COLOR = mix(vec4(0.0), bg_color, mask);
 }

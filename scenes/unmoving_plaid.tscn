@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b1gfxpixwf6by"]
+
+[ext_resource type="Script" uid="uid://d2a0u0go22r3w" path="res://scripts/cursor_follow.gd" id="1_y17ke"]
+[ext_resource type="Shader" uid="uid://bs5p5f02ke0hv" path="res://shaders/unmoving_plaid.gdshader" id="2_snrh7"]
+[ext_resource type="Texture2D" uid="uid://co5h537ul2jc2" path="res://sprites/Norman_Bulb.PNG" id="3_46c38"]
+[ext_resource type="Texture2D" uid="uid://s8014gxv15q7" path="res://sprites/icon.svg" id="3_y17ke"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qfer5"]
+shader = ExtResource("2_snrh7")
+shader_parameter/background_texture = ExtResource("3_46c38")
+shader_parameter/texture_size = Vector2(256, 256)
+shader_parameter/tile_scale = 1.0
+
+[node name="UnmovingPlaid" type="Node2D" unique_id=1604620994]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1412076616]
+material = SubResource("ShaderMaterial_qfer5")
+texture = ExtResource("3_y17ke")
+script = ExtResource("1_y17ke")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=271812302]
