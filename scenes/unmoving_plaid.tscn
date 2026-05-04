@@ -11,7 +11,8 @@ shader = ExtResource("2_snrh7")
 shader_parameter/background_texture = ExtResource("3_46c38")
 shader_parameter/texture_size = Vector2(-150, 150)
 shader_parameter/tile_scale = 1.0
-shader_parameter/offset = Vector2(25, 5)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/translation_speed = Vector2(15, 15)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y17ke"]
 shader = ExtResource("2_snrh7")
@@ -19,6 +20,7 @@ shader_parameter/background_texture = ExtResource("5_snrh7")
 shader_parameter/texture_size = Vector2(0, 0)
 shader_parameter/tile_scale = 1.0
 shader_parameter/offset = Vector2(0, 0)
+shader_parameter/translation_speed = Vector2(-15, 15)
 
 [node name="UnmovingPlaid" type="Node2D" unique_id=1604620994]
 

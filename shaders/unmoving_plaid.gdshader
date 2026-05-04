@@ -29,10 +29,14 @@ uniform float tile_scale = 1.0;
  * This vec2 shifts the assigned texture by the given value(s).
  */
 uniform vec2 offset;
+/**
+ * This vec2 translates the assigned texture by the given value(s) over time.
+ */
+uniform vec2 translation_speed;
 
 void fragment() {
 	// Get absolute screen pixel coordinate
-	vec2 screen_pixel = (SCREEN_UV / SCREEN_PIXEL_SIZE) - offset;
+	vec2 screen_pixel = (SCREEN_UV / SCREEN_PIXEL_SIZE) - (translation_speed * TIME) - offset;
 	
 	// Tile the background
 	vec2 bg_uv = (screen_pixel / texture_size) * tile_scale;
