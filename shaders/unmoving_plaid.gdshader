@@ -39,12 +39,12 @@ void fragment() {
 	vec2 screen_pixel = (SCREEN_UV / SCREEN_PIXEL_SIZE) - (translation_speed * TIME) - offset;
 	
 	// Tile the background
-	vec2 bg_uv = (screen_pixel / texture_size) * tile_scale;
+	vec2 bg_uv = screen_pixel / (texture_size * tile_scale);
 	bg_uv = fract(bg_uv);
 	
 	// Apply the background texture and mask out the alpha channel from the
 	// Sprite2D texture or Polygon2D shape that this shader is attached to
 	vec4 bg_color = texture(background_texture, bg_uv);
 	float mask = texture(TEXTURE, UV).a;
-	COLOR = vec4(bg_color.rgb, mask);
+	COLOR = vec4(bg_color);
 }

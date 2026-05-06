@@ -4,23 +4,34 @@
 [ext_resource type="Shader" uid="uid://bs5p5f02ke0hv" path="res://shaders/unmoving_plaid.gdshader" id="2_snrh7"]
 [ext_resource type="Texture2D" uid="uid://co5h537ul2jc2" path="res://sprites/Norman_Bulb.PNG" id="3_46c38"]
 [ext_resource type="Texture2D" uid="uid://s8014gxv15q7" path="res://sprites/icon.svg" id="3_y17ke"]
-[ext_resource type="Texture2D" uid="uid://y0lohr3o3731" path="res://sprites/fake.jpg" id="5_snrh7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qfer5"]
 shader = ExtResource("2_snrh7")
 shader_parameter/background_texture = ExtResource("3_46c38")
-shader_parameter/texture_size = Vector2(-150, 150)
+shader_parameter/texture_size = Vector2(150, 150)
 shader_parameter/tile_scale = 1.0
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/translation_speed = Vector2(15, 15)
 
+[sub_resource type="Gradient" id="Gradient_y17ke"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_snrh7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_46c38"]
+width = 2000
+height = 2000
+noise = SubResource("FastNoiseLite_snrh7")
+color_ramp = SubResource("Gradient_y17ke")
+seamless = true
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y17ke"]
 shader = ExtResource("2_snrh7")
-shader_parameter/background_texture = ExtResource("5_snrh7")
-shader_parameter/texture_size = Vector2(0, 0)
+shader_parameter/background_texture = SubResource("NoiseTexture2D_46c38")
+shader_parameter/texture_size = Vector2(2000, 2000)
 shader_parameter/tile_scale = 1.0
 shader_parameter/offset = Vector2(0, 0)
-shader_parameter/translation_speed = Vector2(-15, 15)
+shader_parameter/translation_speed = Vector2(-10, 0)
 
 [node name="UnmovingPlaid" type="Node2D" unique_id=1604620994]
 
