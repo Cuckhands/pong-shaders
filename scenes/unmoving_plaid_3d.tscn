@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c60vmwa1m835g"]
+
+[ext_resource type="Shader" uid="uid://b5phee88nwkrc" path="res://shaders/visual_shader_3d.tres" id="1_pddrf"]
+[ext_resource type="Texture2D" uid="uid://co5h537ul2jc2" path="res://sprites/Norman_Bulb.PNG" id="3_a5q7m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sosa2"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_a5q7m"]
+sky_material = SubResource("ProceduralSkyMaterial_sosa2")
+
+[sub_resource type="Environment" id="Environment_2heof"]
+background_mode = 2
+sky = SubResource("Sky_a5q7m")
+tonemap_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pddrf"]
+render_priority = 0
+shader = ExtResource("1_pddrf")
+shader_parameter/background_texture = ExtResource("3_a5q7m")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2heof"]
+material = SubResource("ShaderMaterial_pddrf")
+
+[node name="UnmovingPlaid3D" type="Node3D" unique_id=279052271]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1562657901]
+environment = SubResource("Environment_2heof")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=511906771]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2066770926]
+mesh = SubResource("BoxMesh_2heof")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1230807373]
+transform = Transform3D(0.7071068, -0.35355338, 0.61237246, 0, 0.8660254, 0.50000006, -0.7071068, -0.35355338, 0.61237246, 1, 1, 1)
+rotation_edit_mode = 1

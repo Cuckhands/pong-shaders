@@ -1,0 +1,18 @@
+[gd_resource type="VisualShader" format=3 uid="uid://b5phee88nwkrc"]
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_t5yxf"]
+parameter_name = "background_texture"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_v53ot"]
+output_port_for_preview = 0
+expanded_output_ports = [0]
+source = 5
+
+[resource]
+preview_params/background_texture = "Resource(\"uid://6ibgooxjaee0\", \"res://LESSONS/1. Basics/iii. Textures/1924705-1531508643.jpg\")"
+nodes/fragment/0/position = Vector2(280, 100)
+nodes/fragment/6/node = SubResource("VisualShaderNodeTexture2DParameter_t5yxf")
+nodes/fragment/6/position = Vector2(-520, 140)
+nodes/fragment/8/node = SubResource("VisualShaderNodeTexture_v53ot")
+nodes/fragment/8/position = Vector2(-100, 140)
+nodes/fragment/connections = PackedInt32Array(6, 0, 8, 2, 8, 0, 0, 0)
