@@ -4,7 +4,7 @@ shader_type canvas_item;
  * This texture sets the background of the [b]Sprite2D[/b] or [b]Polygon2D[/b].
  * It will appear broken in the editor until you assign a [b]Texture Size[/b].
  */
-uniform sampler2D background_texture: source_color;
+uniform sampler2D background_texture : source_color, repeat_enable;
 /**
  * This vec2 sets the draw size of the assigned [b]Background Texture[/b].
  * Manual assignment of size is recommended, but it [i]is[/i] possible to do so at initialization.
@@ -45,6 +45,6 @@ void fragment() {
 	// Apply the background texture and mask out the alpha channel from the
 	// Sprite2D texture or Polygon2D shape that this shader is attached to
 	vec4 bg_color = texture(background_texture, bg_uv);
-	float mask = texture(TEXTURE, UV).a;
-	COLOR = vec4(bg_color);
+	float mask = bg_color.a * texture(TEXTURE, UV).a;
+	COLOR = vec4(bg_color.rgb, mask);
 }
