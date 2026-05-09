@@ -41,19 +41,34 @@ uniform vec2 translation_speed;
 uniform sampler2D albedo_texture : source_color;
 
 void fragment() {
-	// Get absolute screen pixel coordinate
+	// Get the absolute screen pixel coordinate of this fragment.
+	// SCREEN_UV goes from (0,0) top‑left to (1,1) bottom‑right.
+	// Multiply by VIEWPORT_SIZE to get actual pixel position.
+	// Then subtract scrolling offset and manual offset.
 	vec2 screen_pixel = (SCREEN_UV * VIEWPORT_SIZE) - (translation_speed * TIME) - offset;
+
+	// Avoid division by zero if texture_size is (0,0).
 	vec2 safe_size = max(texture_size, vec2(0.001));
-	
-	// Tile the background
+
+	// Calculate how many tiles away from the origin this pixel is.
+	// Example: if tile is 100px wide, pixel 0 → 0.0, pixel 150 → 1.5
 	vec2 raw_uv = screen_pixel / (safe_size * tile_scale);
+
+	// Take only the fractional part to wrap around.
+	// This turns 1.5 into 0.5, creating the repeating tile.
 	vec2 bg_uv = fract(raw_uv);
-	vec2 grad_x = dFdx(raw_uv);
-	vec2 grad_y = dFdy(raw_uv);
-	
-	// Apply the background texture and mask out the alpha channel from the
-	// Sprite2D texture or Polygon2D shape that this shader is attached to
-	vec4 bg_color = textureGrad(background_texture, bg_uv, grad_x, grad_y);
-	ALPHA = bg_color.a * texture(albedo_texture, UV).a;
+
+	// Normally the GPU uses derivatives (rate of change) of bg_uv to pick mipmap levels.
+	// But fract() creates a sudden jump at tile edges (from 0.999 to 0.000).
+	// That jump makes the derivative spike, forcing a blurry (low‑res) mip.
+	// The blur appears as a grey line between tiles.
+	// To fix this, we feed the GPU derivatives from raw_uv (which changes smoothly),
+	// so it never sees the jump.
+	vec2 derivative_dx = dFdx(raw_uv);
+	vec2 derivative_dy = dFdy(raw_uv);
+	vec4 bg_color = textureGrad(background_texture, bg_uv, derivative_dx, derivative_dy);
+
+	// Output final color.
 	ALBEDO = bg_color.rgb;
+	ALPHA = bg_color.a;
 }

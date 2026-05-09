@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cdxetqvh2s6or" path="res://LESSONS/1. Basics/iii. Textures/black-pentagon-shape-metrrnqsfwc4txvh-153031235.png" id="1_a5q7m"]
 [ext_resource type="Shader" uid="uid://b4w17aaydq8x6" path="res://shaders/unmoving_plaid_spatial.gdshader" id="1_sosa2"]
-[ext_resource type="Texture2D" uid="uid://6ibgooxjaee0" path="res://LESSONS/1. Basics/iii. Textures/1924705-1531508643.jpg" id="3_2heof"]
+[ext_resource type="Texture2D" uid="uid://y0lohr3o3731" path="res://sprites/fake.jpg" id="3_a5q7m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sosa2"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,11 +19,11 @@ tonemap_mode = 2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7q0ry"]
 render_priority = 1
 shader = ExtResource("1_sosa2")
-shader_parameter/background_texture = ExtResource("3_2heof")
+shader_parameter/background_texture = ExtResource("3_a5q7m")
 shader_parameter/texture_size = Vector2(720, 720)
 shader_parameter/tile_scale = 0.33
 shader_parameter/offset = Vector2(0, 0)
-shader_parameter/translation_speed = Vector2(0, 0)
+shader_parameter/translation_speed = Vector2(15, 15)
 shader_parameter/albedo_texture = ExtResource("1_a5q7m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4h27"]
