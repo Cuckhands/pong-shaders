@@ -36,9 +36,10 @@ uniform vec2 offset;
 uniform vec2 translation_speed;
 
 /**
- * Reference to the mesh's texture, to be assigned via code or in the editor
+ * This texture, specifically the red channel, sets stationary alpha channel for the background.
+ * I might need to implement a sort of UV unwrap for this later, but idk.
  */
-uniform sampler2D albedo_texture : source_color;
+uniform sampler2D alpha_texture : source_color;
 
 void fragment() {
 	// Get the absolute screen pixel coordinate of this fragment.
@@ -67,8 +68,8 @@ void fragment() {
 	vec2 derivative_dx = dFdx(raw_uv);
 	vec2 derivative_dy = dFdy(raw_uv);
 	vec4 bg_color = textureGrad(background_texture, bg_uv, derivative_dx, derivative_dy);
-
+	
 	// Output final color.
 	ALBEDO = bg_color.rgb;
-	ALPHA = bg_color.a;
+	ALPHA = bg_color.a * texture(alpha_texture, UV).r;
 }

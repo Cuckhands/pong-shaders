@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co5h537ul2jc2"
-path.s3tc="res://.godot/imported/Norman_Bulb.PNG-bb05a1864ce6e780208d44850285fdb4.s3tc.ctex"
-path.etc2="res://.godot/imported/Norman_Bulb.PNG-bb05a1864ce6e780208d44850285fdb4.etc2.ctex"
+uid="uid://cbr0gl37t8h73"
+path.s3tc="res://.godot/imported/checker.png-a3fbe9186a7d18d9158038227bcb228b.s3tc.ctex"
+path.etc2="res://.godot/imported/checker.png-a3fbe9186a7d18d9158038227bcb228b.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/Norman_Bulb.PNG"
-dest_files=["res://.godot/imported/Norman_Bulb.PNG-bb05a1864ce6e780208d44850285fdb4.s3tc.ctex", "res://.godot/imported/Norman_Bulb.PNG-bb05a1864ce6e780208d44850285fdb4.etc2.ctex"]
+source_file="res://sprites/checker.png"
+dest_files=["res://.godot/imported/checker.png-a3fbe9186a7d18d9158038227bcb228b.s3tc.ctex", "res://.godot/imported/checker.png-a3fbe9186a7d18d9158038227bcb228b.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdxetqvh2s6or"
 path.s3tc="res://.godot/imported/black-pentagon-shape-metrrnqsfwc4txvh-153031235.png-679cb6cdfa52938b5192e084e57cbc6d.s3tc.ctex"
+path.etc2="res://.godot/imported/black-pentagon-shape-metrrnqsfwc4txvh-153031235.png-679cb6cdfa52938b5192e084e57cbc6d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://LESSONS/1. Basics/iii. Textures/black-pentagon-shape-metrrnqsfwc4txvh-153031235.png"
-dest_files=["res://.godot/imported/black-pentagon-shape-metrrnqsfwc4txvh-153031235.png-679cb6cdfa52938b5192e084e57cbc6d.s3tc.ctex"]
+dest_files=["res://.godot/imported/black-pentagon-shape-metrrnqsfwc4txvh-153031235.png-679cb6cdfa52938b5192e084e57cbc6d.s3tc.ctex", "res://.godot/imported/black-pentagon-shape-metrrnqsfwc4txvh-153031235.png-679cb6cdfa52938b5192e084e57cbc6d.etc2.ctex"]
 
 [params]
 

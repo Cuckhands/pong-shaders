@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co5h537ul2jc2"
-path.s3tc="res://.godot/imported/Norman_Bulb.PNG-bb05a1864ce6e780208d44850285fdb4.s3tc.ctex"
-path.etc2="res://.godot/imported/Norman_Bulb.PNG-bb05a1864ce6e780208d44850285fdb4.etc2.ctex"
+uid="uid://bk0muyf0ddk7n"
+path.s3tc="res://.godot/imported/pentagon-mask.png-a75ff35b6c5542e2e25b53188664b930.s3tc.ctex"
+path.etc2="res://.godot/imported/pentagon-mask.png-a75ff35b6c5542e2e25b53188664b930.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/Norman_Bulb.PNG"
-dest_files=["res://.godot/imported/Norman_Bulb.PNG-bb05a1864ce6e780208d44850285fdb4.s3tc.ctex", "res://.godot/imported/Norman_Bulb.PNG-bb05a1864ce6e780208d44850285fdb4.etc2.ctex"]
+source_file="res://sprites/pentagon-mask.png"
+dest_files=["res://.godot/imported/pentagon-mask.png-a75ff35b6c5542e2e25b53188664b930.s3tc.ctex", "res://.godot/imported/pentagon-mask.png-a75ff35b6c5542e2e25b53188664b930.etc2.ctex"]
 
 [params]
 
