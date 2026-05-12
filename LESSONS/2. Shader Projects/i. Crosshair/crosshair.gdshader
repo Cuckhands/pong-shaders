@@ -24,7 +24,7 @@ uniform float cross_vertical_distance: hint_range(0.0, 1.0) = 0.25;
 uniform float cross_horizontal_length: hint_range(0.0, 1.0) = 0.5;
 /** Does nothing for now */
 uniform float cross_vertical_length: hint_range(0.0, 1.0) = 0.5;
-/** Turns the crosshair into a T-shaped crosshair. */
+/** Swaps the cross for a T-shape. */
 uniform bool t_crosshair = false;
 
 
@@ -44,11 +44,9 @@ float create_circles(vec2 uv) {
 }
 
 float create_cross(vec2 uv) {
-	// Calculate the horizontal and vertical bars
 	float horizontal_bar = step(distance(uv.y, 0.5), cross_thickness * 0.5);
 	float vertical_bar = step(distance(uv.x, 0.5), cross_thickness * 0.5);
 	
-	// Create the actual cross
 	float cross_bars = clamp(vertical_bar + horizontal_bar, 0, 1);
 	
 	// Remove the top bar from the crosshair, if necessary
@@ -60,7 +58,6 @@ float create_cross(vec2 uv) {
 }
 
 void fragment() {
-	// Make it white
 	COLOR = color;
 	
 	// Combine the dot, ring, and cross to make a full crosshair

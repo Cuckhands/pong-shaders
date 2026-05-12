@@ -15,7 +15,7 @@ shader_parameter/cross_horizontal_distance = 0.25
 shader_parameter/cross_vertical_distance = 0.25
 shader_parameter/cross_horizontal_length = 0.5
 shader_parameter/cross_vertical_length = 0.5
-shader_parameter/t_crosshair = false
+shader_parameter/t_crosshair = true
 
 [node name="Crosshair" type="Node2D" unique_id=457862116]
 
