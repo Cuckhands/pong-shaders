@@ -5,10 +5,17 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j5avl"]
 shader = ExtResource("1_lgopb")
+shader_parameter/color = Color(0, 1, 0, 1)
 shader_parameter/dot_size = 0.5
 shader_parameter/circle_distance = 0.75
 shader_parameter/ring_thickness = 0.15
-shader_parameter/cutout_cross_thickness = 0.25
+shader_parameter/cross_cutout_width = 0.250000011875
+shader_parameter/cross_thickness = 0.1
+shader_parameter/cross_horizontal_distance = 0.25
+shader_parameter/cross_vertical_distance = 0.25
+shader_parameter/cross_horizontal_length = 0.5
+shader_parameter/cross_vertical_length = 0.5
+shader_parameter/t_crosshair = false
 
 [node name="Crosshair" type="Node2D" unique_id=457862116]
 
