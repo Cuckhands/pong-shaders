@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b8s35f7ssv3ph"]
+
+[ext_resource type="Texture2D" uid="uid://co5h537ul2jc2" path="res://sprites/Norman_Bulb.PNG" id="1_t7q2h"]
+[ext_resource type="Texture2D" uid="uid://y0lohr3o3731" path="res://sprites/fake.jpg" id="2_ba2it"]
+[ext_resource type="Shader" uid="uid://jp770w5tj54" path="res://shaders/blackhole.gdshader" id="3_ohbp3"]
+
+[sub_resource type="Gradient" id="Gradient_a5q7m"]
+offsets = PackedFloat32Array(0.795539, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a5q7m"]
+noise_type = 3
+frequency = 0.0061
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2heof"]
+noise = SubResource("FastNoiseLite_a5q7m")
+color_ramp = SubResource("Gradient_a5q7m")
+seamless = true
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sosa2"]
+sky_top_color = Color(0.21165636, 0.35435572, 1, 1)
+sky_horizon_color = Color(0.99119574, 0.92291677, 0.72781295, 1)
+sky_cover = SubResource("NoiseTexture2D_2heof")
+sky_cover_modulate = Color(0.67343515, 0.50628763, 0.48400807, 1)
+ground_bottom_color = Color(0.17722088, 0.1499398, 0.27637535, 1)
+
+[sub_resource type="Sky" id="Sky_a5q7m"]
+sky_material = SubResource("ProceduralSkyMaterial_sosa2")
+
+[sub_resource type="Environment" id="Environment_2heof"]
+background_mode = 2
+sky = SubResource("Sky_a5q7m")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2heof"]
+albedo_texture = ExtResource("1_t7q2h")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xm5mm"]
+material = SubResource("StandardMaterial3D_2heof")
+radius = 12.298
+height = 67.292
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7q0ry"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4h27"]
+next_pass = SubResource("ShaderMaterial_7q0ry")
+albedo_texture = ExtResource("2_ba2it")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2heof"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_b4h27")
+size = Vector3(12, 12, 12)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xm5mm"]
+render_priority = 0
+shader = ExtResource("3_ohbp3")
+shader_parameter/scale = 15.92
+
+[sub_resource type="SphereMesh" id="SphereMesh_4mgje"]
+material = SubResource("ShaderMaterial_xm5mm")
+radius = 10.0
+height = 20.0
+
+[node name="UnmovingPlaid3D" type="Node3D" unique_id=279052271]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1562657901]
+environment = SubResource("Environment_2heof")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=511906771]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1230807373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 49.091057)
+
+[node name="MeshInstanceCapsule" type="MeshInstance3D" parent="." unique_id=1603596688]
+transform = Transform3D(0.8560506, -0.51689196, 0, 0.51689196, 0.8560506, 0, 0, 0, 1, -24.793953, -0.019185305, -1.2327092)
+mesh = SubResource("CapsuleMesh_xm5mm")
+
+[node name="MeshInstanceCube" type="MeshInstance3D" parent="." unique_id=2066770926]
+mesh = SubResource("BoxMesh_2heof")
+
+[node name="MeshInstanceSphere" type="MeshInstance3D" parent="." unique_id=1971639822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.817463, 0, 2.596321)
+mesh = SubResource("SphereMesh_4mgje")
